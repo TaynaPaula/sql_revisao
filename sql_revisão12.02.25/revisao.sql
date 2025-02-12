@@ -4,7 +4,7 @@ USE biblioteca;
 CREATE TABLE funcionario (
     id_funcionario INT(11)  PRIMARY KEY AUTO_INCREMENT,
     nome_funcionario VARCHAR(100) NOT NULL,
-    cpf_funcionario int(11) NOT NULL,
+    cpf_funcionario INT(11) NOT NULL,
     email_funcionario VARCHAR(150) NOT NULL,
     endereco_funcionario VARCHAR(200) NOT NULL,
     telefone_funcionario VARCHAR(15) NOT NULL
@@ -13,7 +13,7 @@ CREATE TABLE funcionario (
 create table funcionarios_salarios (
     id_funcionario INT(11)  PRIMARY KEY AUTO_INCREMENT,
     cargo_funcionario VARCHAR(100),
-    salario_funcionario int(100) NOT NULL,
+    salario_funcionario INT(100) NOT NULL,
     FOREIGN KEY (id_funcionario) REFERENCES funcionario(id_funcionario)
 );
 
