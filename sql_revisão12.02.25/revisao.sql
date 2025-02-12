@@ -30,7 +30,7 @@ CREATE TABLE fornecedor (
     nome_fornecedor VARCHAR(100) NOT NULL,
     contato VARCHAR(100) NOT NULL,
     telefone VARCHAR(15) NOT NULL,
-    email_funcionario VARCHAR(150) NOT NULL,
+    email_funcionario VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE pedido (
