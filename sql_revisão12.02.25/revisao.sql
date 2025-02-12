@@ -17,12 +17,28 @@ create table funcionarios_salarios (
     FOREIGN KEY (id_funcionario) REFERENCES funcionario(id_funcionario)
 );
 
-
+/*Relação de muitos para muitos entre fornecedor e pedidos*/
 CREATE TABLE livro (
     id_livro INT(11) NOT NULL PRIMARY KEY,
     genero VARCHAR(100) NOT NULL,
     titulo VARCHAR(300) NOT NULL,
     autor VARCHAR(200) NOT NULL  
+);
+
+CREATE TABLE fornecedor (
+    id_fornecedor INT PRIMARY KEY AUTO_INCREMENT,
+    nome_fornecedor VARCHAR(100) NOT NULL,
+    contato VARCHAR(100) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    email_funcionario VARCHAR(150) NOT NULL,
+);
+
+CREATE TABLE pedido (
+    id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+    id_fornecedor INT NOT NULL,
+    data_pedido DATE NOT NULL,
+    valor_total DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor)
 );
 
 /*relaçao de um para muitos: o usuario pode retirar mais de um livro */
